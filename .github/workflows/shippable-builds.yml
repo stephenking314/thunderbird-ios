@@ -9,9 +9,6 @@ env:
   XCODE_VERSION: "26.0"
 
 on:
-  schedule:
-    # Weekly run on Friday at 14:00 UTC
-    - cron: '0 14 * * 5'
   workflow_dispatch:
     inputs:
       version:

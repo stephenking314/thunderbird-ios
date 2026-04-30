@@ -1,8 +1,7 @@
 name: Security - CodeQL
 
 on:
-  schedule:
-    - cron: "15 4 * * 4"
+  workflow_dispatch:
 
 permissions:
   contents: read
