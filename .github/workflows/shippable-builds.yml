@@ -159,6 +159,11 @@ jobs:
           # Expose path for Fastlane
           echo "APP_STORE_CONNECT_API_KEY_PATH=$KEY_PATH" >> "$GITHUB_ENV"
 
+      - name: Clear SPM Cache and Xcode Derived Data
+        run: |
+          rm -rf ~/Library/Caches/org.swift.swiftpm/repositories
+          rm -rf ~/Library/Developer/Xcode/DerivedData
+
       - name: Resolve Package Dependencies
         working-directory: fastlane
         run: |

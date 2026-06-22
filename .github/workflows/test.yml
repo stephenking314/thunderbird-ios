@@ -23,7 +23,10 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-
+      - name: Clear SPM Cache and Xcode Derived Data
+        run: |
+          rm -rf ~/Library/Caches/org.swift.swiftpm/repositories
+          rm -rf ~/Library/Developer/Xcode/DerivedData
       - name: Resolve package dependencies
         run: |
           xcodebuild -resolvePackageDependencies \

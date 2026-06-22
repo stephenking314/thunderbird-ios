@@ -36,6 +36,11 @@ jobs:
           languages: ${{ matrix.language }}
           build-mode: ${{ matrix.build-mode }}
 
+      - name: Clear SPM Cache and Xcode Derived Data
+        run: |
+          rm -rf ~/Library/Caches/org.swift.swiftpm/repositories
+          rm -rf ~/Library/Developer/Xcode/DerivedData
+
       - name: Build Thunderbird app
         if: matrix.build-mode == 'manual'
         shell: bash
